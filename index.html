@@ -17,7 +17,12 @@
                     <h1>ServiciosHogar</h1>
                 </div>
                 <div class="nav-links">
-                    <a href="index.html" class="nav-link active">Inicio</a>
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="#categorias" class="nav-link">Categorías</a>
+                    <a href="#solicitudes" class="nav-link">Solicitudes</a>
+                    <a href="#chats" class="nav-link">Chats</a>
+                    <a href="#certificados" class="nav-link">Certificados</a>
+                    <a href="#ajustes" class="nav-link">Ajustes</a>
                     <a href="login.html" class="nav-link">Iniciar Sesión</a>
                     <a href="register.html" class="nav-link">Registrarse</a>
                 </div>
@@ -51,49 +56,140 @@
         </section>
 
         <!-- Categories Section -->
-        <section class="categories">
+        <section class="categories" id="categorias">
             <div class="container">
-                <h3 class="section-title">Servicios Principales</h3>
+                <h3 class="section-title">Gremios y Especialidades</h3>
                 <div class="categories-grid">
                     <div class="category-card">
                         <div class="category-icon">🔨</div>
                         <h4>Albañilería</h4>
-                        <p>Construcción, reparaciones y remodelaciones</p>
+                        <p>Instalaciones, reparaciones menores, micro y macro obras, revoques, cielorrasos, demoliciones, tabiques, supervisión técnica.</p>
+                        <details>
+                            <summary>Subcategorías</summary>
+                            <ul>
+                                <li>Instalaciones menores</li>
+                                <li>Construcción y remodelación</li>
+                                <li>Supervisión técnica</li>
+                            </ul>
+                        </details>
                     </div>
                     <div class="category-card">
                         <div class="category-icon">🪚</div>
                         <h4>Carpintería</h4>
-                        <p>Muebles, puertas, ventanas y trabajos en madera</p>
+                        <p>Muebles, puertas, ventanas, aberturas, cerraduras, parquet, pisos flotantes.</p>
+                        <details>
+                            <summary>Subcategorías</summary>
+                            <ul>
+                                <li>Instalación de muebles</li>
+                                <li>Reparación de aberturas</li>
+                                <li>Pulido y plastificado de pisos</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🔑</div>
+                        <h4>Cerrajería</h4>
+                        <p>Cerraduras, llaves, aberturas, cristales.</p>
+                        <details>
+                            <summary>Subcategorías</summary>
+                            <ul>
+                                <li>Instalación de cerraduras</li>
+                                <li>Reparación de llaves</li>
+                                <li>Colocación de cristales</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🧱</div>
+                        <h4>Colocadores de Revestimientos y Solados</h4>
+                        <p>Revestimientos, solados, mármoles, pisos flotantes.</p>
+                        <details>
+                            <summary>Subcategorías</summary>
+                            <ul>
+                                <li>Colocación de cerámicos</li>
+                                <li>Instalación de mármoles</li>
+                                <li>Pisos flotantes</li>
+                            </ul>
+                        </details>
                     </div>
                     <div class="category-card">
                         <div class="category-icon">⚡</div>
                         <h4>Electricistas</h4>
-                        <p>Instalaciones eléctricas y reparaciones</p>
-                    </div>
-                    <div class="category-card">
-                        <div class="category-icon">🔧</div>
-                        <h4>Plomería</h4>
-                        <p>Instalaciones sanitarias y reparaciones</p>
+                        <p>Instalaciones eléctricas, luminarias, bocas de teclas y enchufes, cableado, disyuntores, térmicas.</p>
+                        <details>
+                            <summary>Subcategorías</summary>
+                            <ul>
+                                <li>Instalación de luminarias</li>
+                                <li>Reparación de cableado</li>
+                                <li>Colocación de artefactos</li>
+                            </ul>
+                        </details>
                     </div>
                     <div class="category-card">
                         <div class="category-icon">🔥</div>
                         <h4>Gasistas</h4>
-                        <p>Instalaciones de gas y calefacción</p>
+                        <p>Instalaciones de gas, calefacción, medidores, caños, matriculación certificada.</p>
+                        <details>
+                            <summary>Subcategorías</summary>
+                            <ul>
+                                <li>Instalación de medidor</li>
+                                <li>Reparación de caños</li>
+                                <li>Colocación de artefactos</li>
+                            </ul>
+                        </details>
                     </div>
                     <div class="category-card">
                         <div class="category-icon">🎨</div>
-                        <h4>Pintura</h4>
-                        <p>Pintura interior, exterior y decoración</p>
+                        <h4>Pintores</h4>
+                        <p>Pintura interior, exterior, humedades, filtraciones.</p>
+                        <details>
+                            <summary>Subcategorías</summary>
+                            <ul>
+                                <li>Pintura de interiores</li>
+                                <li>Tratamiento de humedades</li>
+                                <li>Filtraciones</li>
+                            </ul>
+                        </details>
                     </div>
                     <div class="category-card">
-                        <div class="category-icon">🧹</div>
-                        <h4>Limpieza</h4>
-                        <p>Limpieza profunda y mantenimiento</p>
+                        <div class="category-icon">🔧</div>
+                        <h4>Plomeros</h4>
+                        <p>Instalaciones sanitarias, cañerías, desagües, bombas de agua, tanques, sanitarios, griferías.</p>
+                        <details>
+                            <summary>Subcategorías</summary>
+                            <ul>
+                                <li>Instalación de cañerías</li>
+                                <li>Reparación de desagües</li>
+                                <li>Colocación de sanitarios</li>
+                            </ul>
+                        </details>
                     </div>
                     <div class="category-card">
-                        <div class="category-icon">🌿</div>
-                        <h4>Jardinería</h4>
-                        <p>Mantenimiento y diseño de jardines</p>
+                        <div class="category-icon">🏗️</div>
+                        <h4>Reformistas Especializados</h4>
+                        <p>Maestro mayor de obras, arquitectos matriculados, reformas integrales, parciales o generales.</p>
+                        <details>
+                            <summary>Subcategorías</summary>
+                            <ul>
+                                <li>Reformas integrales</li>
+                                <li>Reformas parciales</li>
+                                <li>Supervisión de obra</li>
+                            </ul>
+                        </details>
+                    </div>
+                    <div class="category-card">
+                        <div class="category-icon">🛠️</div>
+                        <h4>Otras Especialidades</h4>
+                        <p>Herrería, jardinería, limpieza, mantenimiento, etc.</p>
+                        <details>
+                            <summary>Subcategorías</summary>
+                            <ul>
+                                <li>Herrería</li>
+                                <li>Jardinería</li>
+                                <li>Limpieza</li>
+                                <li>Mantenimiento</li>
+                            </ul>
+                        </details>
                     </div>
                 </div>
             </div>
