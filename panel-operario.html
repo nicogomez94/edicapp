@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Profesional - ServiciosHogar</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <h1><a href="index.html" style="text-decoration: none; color: var(--primary-color);">ServiciosHogar</a></h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link active">Mi Panel</a>
+                    <a href="#" class="nav-link">Mensajes</a>
+                    <a href="#" class="nav-link">Mi Perfil</a>
+                    <a href="index.html" class="nav-link">Cerrar Sesión</a>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <h2 class="dashboard-title">¡Hola, Juan Pérez!</h2>
+                <p class="dashboard-subtitle">Panel de profesional - Especialista en Plomería</p>
+            </div>
+
+            <!-- Quick Stats Row -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary-color);">3</div>
+                    <div style="color: var(--gray-600);">Trabajos Activos</div>
+                </div>
+                <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--success-color);">24</div>
+                    <div style="color: var(--gray-600);">Completados</div>
+                </div>
+                <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--warning-color);">4.9</div>
+                    <div style="color: var(--gray-600);">⭐ Calificación</div>
+                </div>
+                <div style="background: var(--white); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow-sm); text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--accent-color);">$8,450</div>
+                    <div style="color: var(--gray-600);">Ganancias Mes</div>
+                </div>
+            </div>
+
+            <!-- Tab Navigation -->
+            <div style="border-bottom: 1px solid var(--gray-200); margin-bottom: 2rem;">
+                <div style="display: flex; gap: 2rem;">
+                    <button class="tab-btn active" onclick="showTab('jobs')" data-tab="jobs">
+                        Trabajos Asignados
+                    </button>
+                    <button class="tab-btn" onclick="showTab('opportunities')" data-tab="opportunities">
+                        Nuevas Oportunidades
+                    </button>
+                    <button class="tab-btn" onclick="showTab('completed')" data-tab="completed">
+                        Trabajos Completados
+                    </button>
+                    <button class="tab-btn" onclick="showTab('reviews')" data-tab="reviews">
+                        Calificaciones
+                    </button>
+                    <button class="tab-btn" onclick="showTab('earnings')" data-tab="earnings">
+                        Ganancias
+                    </button>
+                </div>
+            </div>
+
+            <!-- Assigned Jobs Tab -->
+            <div id="jobs-tab" class="tab-content">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Trabajos Asignados</h3>
+                        <span class="status-badge status-pending">3 activos</span>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: grid; gap: 1.5rem;">
+                            <!-- Job 1 -->
+                            <div style="border: 1px solid var(--gray-200); border-radius: var(--border-radius); padding: 1.5rem;">
+                                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                                    <div style="flex: 1;">
+                                        <h4 style="margin-bottom: 0.5rem; color: var(--gray-900);">Reparación de fuga en baño principal</h4>
+                                        <p style="color: var(--gray-600); margin-bottom: 0.5rem;">Cliente: María González</p>
+                                        <p style="color: var(--gray-600); margin-bottom: 1rem;">📍 Av. Libertador 1234, Buenos Aires</p>
+                                    </div>
+                                    <span class="status-badge status-in-progress">En progreso</span>
+                                </div>
+                                
+                                <div style="margin-bottom: 1rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>Descripción:</strong></p>
+                                    <p style="color: var(--gray-600);">Fuga importante en la tubería debajo del lavabo. Se necesita cambio de cañería y posible reparación de azulejos.</p>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                    <div>
+                                        <strong>Fecha inicio:</strong><br>
+                                        <span style="color: var(--gray-600);">20 Ene 2025</span>
+                                    </div>
+                                    <div>
+                                        <strong>Presupuesto:</strong><br>
+                                        <span style="color: var(--gray-600);">$450</span>
+                                    </div>
+                                    <div>
+                                        <strong>Urgencia:</strong><br>
+                                        <span style="color: var(--warning-color);">Alta</span>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <button class="btn btn-primary" onclick="showUploadModal('job1')" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                        📷 Subir Fotos
+                                    </button>
+                                    <button class="btn btn-secondary" onclick="markComplete('job1')" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                        ✅ Marcar Completado
+                                    </button>
+                                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                        💬 Contactar Cliente
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Job 2 -->
+                            <div style="border: 1px solid var(--gray-200); border-radius: var(--border-radius); padding: 1.5rem;">
+                                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                                    <div style="flex: 1;">
+                                        <h4 style="margin-bottom: 0.5rem; color: var(--gray-900);">Instalación de grifería nueva</h4>
+                                        <p style="color: var(--gray-600); margin-bottom: 0.5rem;">Cliente: Roberto Silva</p>
+                                        <p style="color: var(--gray-600); margin-bottom: 1rem;">📍 Calle San Martín 567, Córdoba</p>
+                                    </div>
+                                    <span class="status-badge status-pending">Programado</span>
+                                </div>
+                                
+                                <div style="margin-bottom: 1rem;">
+                                    <p style="margin-bottom: 0.5rem;"><strong>Descripción:</strong></p>
+                                    <p style="color: var(--gray-600);">Cambio completo de grifería en cocina y baño. Cliente ya tiene los materiales.</p>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                    <div>
+                                        <strong>Fecha programada:</strong><br>
+                                        <span style="color: var(--gray-600);">25 Ene 2025</span>
+                                    </div>
+                                    <div>
+                                        <strong>Presupuesto:</strong><br>
+                                        <span style="color: var(--gray-600);">$280</span>
+                                    </div>
+                                    <div>
+                                        <strong>Urgencia:</strong><br>
+                                        <span style="color: var(--accent-color);">Normal</span>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                        📅 Confirmar Cita
+                                    </button>
+                                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                        💬 Contactar Cliente
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Opportunities Tab -->
+            <div id="opportunities-tab" class="tab-content" style="display: none;">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Nuevas Oportunidades</h3>
+                        <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Filtros</button>
+                    </div>
+                    <div class="card-content">
+                        <div style="display: grid; gap: 1.5rem;">
+                            <!-- Opportunity 1 -->
+                            <div style="border: 1px solid var(--primary-color); border-radius: var(--border-radius); padding: 1.5rem; background: rgba(37, 99, 235, 0.02);">
+                                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                                    <div style="flex: 1;">
+                                        <h4 style="margin-bottom: 0.5rem; color: var(--gray-900);">Reparación urgente de caldera</h4>
+                                        <p style="color: var(--gray-600); margin-bottom: 0.5rem;">Cliente: Laura Martínez</p>
+                                        <p style="color: var(--gray-600); margin-bottom: 1rem;">📍 Barrio Norte, a 5km de tu ubicación</p>
+                                    </div>
+                                    <span style="background: var(--error-color); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Urgente</span>
+                                </div>
+                                
+                                <div style="margin-bottom: 1rem;">
+                                    <p style="color: var(--gray-600);">La caldera no enciende y no hay agua caliente. Se necesita revisión inmediata.</p>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                    <div>
+                                        <strong>Presupuesto:</strong><br>
+                                        <span style="color: var(--success-color); font-weight: 600;">$400-600</span>
+                                    </div>
+                                    <div>
+                                        <strong>Tiempo:</strong><br>
+                                        <span style="color: var(--gray-600);">Hoy</span>
+                                    </div>
+                                    <div>
+                                        <strong>Propuestas:</strong><br>
+                                        <span style="color: var(--gray-600);">2 enviadas</span>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                        📝 Enviar Propuesta
+                                    </button>
+                                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                        👁️ Ver Detalles
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Opportunity 2 -->
+                            <div style="border: 1px solid var(--gray-200); border-radius: var(--border-radius); padding: 1.5rem;">
+                                <div style="display: flex; justify-content: between; align-items: start; margin-bottom: 1rem;">
+                                    <div style="flex: 1;">
+                                        <h4 style="margin-bottom: 0.5rem; color: var(--gray-900);">Instalación de ducha nueva</h4>
+                                        <p style="color: var(--gray-600); margin-bottom: 0.5rem;">Cliente: Carmen Rodríguez</p>
+                                        <p style="color: var(--gray-600); margin-bottom: 1rem;">📍 Palermo, a 8km de tu ubicación</p>
+                                    </div>
+                                    <span style="background: var(--accent-color); color: white; padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem;">Normal</span>
+                                </div>
+                                
+                                <div style="margin-bottom: 1rem;">
+                                    <p style="color: var(--gray-600);">Cambio completo de ducha en baño secundario. Incluye azulejos y conexiones.</p>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 1rem;">
+                                    <div>
+                                        <strong>Presupuesto:</strong><br>
+                                        <span style="color: var(--success-color); font-weight: 600;">$800-1200</span>
+                                    </div>
+                                    <div>
+                                        <strong>Tiempo:</strong><br>
+                                        <span style="color: var(--gray-600);">2 semanas</span>
+                                    </div>
+                                    <div>
+                                        <strong>Propuestas:</strong><br>
+                                        <span style="color: var(--gray-600);">5 enviadas</span>
+                                    </div>
+                                </div>
+
+                                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                    <button class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                        📝 Enviar Propuesta
+                                    </button>
+                                    <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+                                        👁️ Ver Detalles
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Completed Jobs Tab -->
+            <div id="completed-tab" class="tab-content" style="display: none;">
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3 class="card-title">Trabajos Completados</h3>
+                    </div>
+                    <div class="card-content">
+                        <div style="overflow-x: auto;">
+                            <table style="width: 100%; border-collapse: collapse;">
+                                <thead>
+                                    <tr style="border-bottom: 2px solid var(--gray-200);">
+                                        <th style="text-align: left; padding: 1rem 0.5rem; color: var(--gray-700);">Fecha</th>
+                                        <th style="text-align: left; padding: 1rem 0.5rem; color: var(--gray-700);">Proyecto</th>
+                                        <th style="text-align: left; padding: 1rem 0.5rem; color: var(--gray-700);">Cliente</th>
+                                        <th style="text-align: left; padding: 1rem 0.5rem; color: var(--gray-700);">Ganancia</th>
+                                        <th style="text-align: center; padding: 1rem 0.5rem; color: var(--gray-700);">Calificación</th>
+                                        <th style="text-align: center; padding: 1rem 0.5rem; color: var(--gray-700);">Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="border-bottom: 1px solid var(--gray-200);">
+                                        <td style="padding: 1rem 0.5rem;">18 Ene 2025</td>
+                                        <td style="padding: 1rem 0.5rem;">Reparación grifo cocina</td>
+                                        <td style="padding: 1rem 0.5rem;">Ana Pérez</td>
+                                        <td style="padding: 1rem 0.5rem; color: var(--success-color); font-weight: 600;">$180</td>
+                                        <td style="padding: 1rem 0.5rem; text-align: center;">⭐⭐⭐⭐⭐</td>
+                                        <td style="padding: 1rem 0.5rem; text-align: center;">
+                                            <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">Ver detalles</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--gray-200);">
+                                        <td style="padding: 1rem 0.5rem;">15 Ene 2025</td>
+                                        <td style="padding: 1rem 0.5rem;">Instalación lavadora</td>
+                                        <td style="padding: 1rem 0.5rem;">Carlos Mendez</td>
+                                        <td style="padding: 1rem 0.5rem; color: var(--success-color); font-weight: 600;">$220</td>
+                                        <td style="padding: 1rem 0.5rem; text-align: center;">⭐⭐⭐⭐⭐</td>
+                                        <td style="padding: 1rem 0.5rem; text-align: center;">
+                                            <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">Ver detalles</button>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom: 1px solid var(--gray-200);">
+                                        <td style="padding: 1rem 0.5rem;">12 Ene 2025</td>
+                                        <td style="padding: 1rem 0.5rem;">Reparación cañería</td>
+                                        <td style="padding: 1rem 0.5rem;">Lucía Torres</td>
+                                        <td style="padding: 1rem 0.5rem; color: var(--success-color); font-weight: 600;">$350</td>
+                                        <td style="padding: 1rem 0.5rem; text-align: center;">⭐⭐⭐⭐</td>
+                                        <td style="padding: 1rem 0.5rem; text-align: center;">
+                                            <button class="btn btn-secondary" style="padding: 0.25rem 0.75rem; font-size: 0.8rem;">Ver detalles</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviews Tab -->
+            <div id="reviews-tab" class="tab-content" style="display: none;">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Resumen de Calificaciones</h3>
+                        </div>
+                        <div class="card-content">
+                            <div style="text-align: center; margin-bottom: 2rem;">
+                                <div style="font-size: 3rem; font-weight: 700; color: var(--warning-color);">4.9</div>
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⭐⭐⭐⭐⭐</div>
+                                <p style="color: var(--gray-600);">Basado en 24 reseñas</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 1rem;">
+                                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <span style="width: 60px;">5 ⭐</span>
+                                    <div style="flex: 1; background: var(--gray-200); height: 8px; border-radius: 4px; margin: 0 1rem;">
+                                        <div style="width: 85%; height: 100%; background: var(--warning-color); border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="width: 30px; text-align: right;">20</span>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <span style="width: 60px;">4 ⭐</span>
+                                    <div style="flex: 1; background: var(--gray-200); height: 8px; border-radius: 4px; margin: 0 1rem;">
+                                        <div style="width: 15%; height: 100%; background: var(--warning-color); border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="width: 30px; text-align: right;">3</span>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <span style="width: 60px;">3 ⭐</span>
+                                    <div style="flex: 1; background: var(--gray-200); height: 8px; border-radius: 4px; margin: 0 1rem;">
+                                        <div style="width: 5%; height: 100%; background: var(--warning-color); border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="width: 30px; text-align: right;">1</span>
+                                </div>
+                                <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                    <span style="width: 60px;">2 ⭐</span>
+                                    <div style="flex: 1; background: var(--gray-200); height: 8px; border-radius: 4px; margin: 0 1rem;">
+                                        <div style="width: 0%; height: 100%; background: var(--warning-color); border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="width: 30px; text-align: right;">0</span>
+                                </div>
+                                <div style="display: flex; align-items: center;">
+                                    <span style="width: 60px;">1 ⭐</span>
+                                    <div style="flex: 1; background: var(--gray-200); height: 8px; border-radius: 4px; margin: 0 1rem;">
+                                        <div style="width: 0%; height: 100%; background: var(--warning-color); border-radius: 4px;"></div>
+                                    </div>
+                                    <span style="width: 30px; text-align: right;">0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Reseñas Recientes</h3>
+                        </div>
+                        <div class="card-content">
+                            <div style="border-bottom: 1px solid var(--gray-200); padding-bottom: 1rem; margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <strong>Ana Pérez</strong>
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <p style="color: var(--gray-600); margin-bottom: 0.5rem;">"Excelente trabajo, muy profesional y puntual. Solucionó el problema rápidamente."</p>
+                                <small style="color: var(--gray-500);">18 Ene 2025</small>
+                            </div>
+                            
+                            <div style="border-bottom: 1px solid var(--gray-200); padding-bottom: 1rem; margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <strong>Carlos Mendez</strong>
+                                    <span>⭐⭐⭐⭐⭐</span>
+                                </div>
+                                <p style="color: var(--gray-600); margin-bottom: 0.5rem;">"Instaló mi lavadora perfectamente. Muy recomendable."</p>
+                                <small style="color: var(--gray-500);">15 Ene 2025</small>
+                            </div>
+                            
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <strong>Lucía Torres</strong>
+                                    <span>⭐⭐⭐⭐</span>
+                                </div>
+                                <p style="color: var(--gray-600); margin-bottom: 0.5rem;">"Buen trabajo, aunque tardó un poco más de lo esperado."</p>
+                                <small style="color: var(--gray-500);">12 Ene 2025</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Earnings Tab -->
+            <div id="earnings-tab" class="tab-content" style="display: none;">
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Resumen de Ganancias</h3>
+                        </div>
+                        <div class="card-content">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                                <div style="text-align: center; padding: 1rem; background: var(--gray-100); border-radius: var(--border-radius);">
+                                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--success-color);">$8,450</div>
+                                    <div style="color: var(--gray-600);">Este mes</div>
+                                </div>
+                                <div style="text-align: center; padding: 1rem; background: var(--gray-100); border-radius: var(--border-radius);">
+                                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--success-color);">$6,320</div>
+                                    <div style="color: var(--gray-600);">Mes anterior</div>
+                                </div>
+                                <div style="text-align: center; padding: 1rem; background: var(--gray-100); border-radius: var(--border-radius);">
+                                    <div style="font-size: 1.5rem; font-weight: 700; color: var(--success-color);">$28,760</div>
+                                    <div style="color: var(--gray-600);">Total 2025</div>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 1rem;">
+                                <h4 style="margin-bottom: 1rem;">Ganancias por Servicio</h4>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>Reparaciones urgentes:</span>
+                                    <strong>$3,200 (38%)</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>Instalaciones:</span>
+                                    <strong>$2,840 (34%)</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>Mantenimiento:</span>
+                                    <strong>$1,680 (20%)</strong>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Otros:</span>
+                                    <strong>$730 (8%)</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3 class="card-title">Historial de Pagos</h3>
+                        </div>
+                        <div class="card-content">
+                            <div style="border-bottom: 1px solid var(--gray-200); padding-bottom: 1rem; margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <strong>Reparación grifo - Ana Pérez</strong>
+                                    <span style="color: var(--success-color); font-weight: 600;">+$180</span>
+                                </div>
+                                <small style="color: var(--gray-500);">18 Ene 2025 - Transferido a tu cuenta</small>
+                            </div>
+                            
+                            <div style="border-bottom: 1px solid var(--gray-200); padding-bottom: 1rem; margin-bottom: 1rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <strong>Instalación lavadora - Carlos Mendez</strong>
+                                    <span style="color: var(--success-color); font-weight: 600;">+$220</span>
+                                </div>
+                                <small style="color: var(--gray-500);">15 Ene 2025 - Transferido a tu cuenta</small>
+                            </div>
+                            
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                                    <strong>Reparación cañería - Lucía Torres</strong>
+                                    <span style="color: var(--success-color); font-weight: 600;">+$350</span>
+                                </div>
+                                <small style="color: var(--gray-500);">12 Ene 2025 - Transferido a tu cuenta</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 2rem; border-radius: var(--border-radius); max-width: 500px; width: 90%;">
+            <h3 style="margin-bottom: 1rem;">Subir Fotos del Trabajo</h3>
+            <div style="margin-bottom: 1rem;">
+                <label class="form-label">Seleccionar imágenes</label>
+                <input type="file" multiple accept="image/*" class="form-input">
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <label class="form-label">Comentarios sobre el trabajo</label>
+                <textarea class="form-input" rows="3" placeholder="Describe lo que se realizó..."></textarea>
+            </div>
+            <div style="display: flex; gap: 1rem; justify-content: flex-end;">
+                <button class="btn btn-secondary" onclick="closeUploadModal()">Cancelar</button>
+                <button class="btn btn-primary" onclick="uploadPhotos()">Subir Fotos</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Tab functionality
+        function showTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
+            });
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            document.getElementById(tabName + '-tab').style.display = 'block';
+            document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+        }
+
+        // Upload modal functions
+        function showUploadModal(jobId) {
+            document.getElementById('uploadModal').style.display = 'flex';
+        }
+
+        function closeUploadModal() {
+            document.getElementById('uploadModal').style.display = 'none';
+        }
+
+        function uploadPhotos() {
+            alert('¡Fotos subidas exitosamente!');
+            closeUploadModal();
+        }
+
+        function markComplete(jobId) {
+            if (confirm('¿Estás seguro de que el trabajo está completado?')) {
+                alert('Trabajo marcado como completado. El cliente recibirá una notificación.');
+            }
+        }
+    </script>
+
+    <style>
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 0;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .tab-btn:hover {
+            color: var(--primary-color);
+        }
+
+        .tab-content {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body>
+</html>
